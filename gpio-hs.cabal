@@ -1,0 +1,42 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.38.2.
+--
+-- see: https://github.com/sol/hpack
+
+name:           gpio-hs
+version:        0.0.0
+build-type:     Simple
+
+library
+  exposed-modules:
+      Control.Effect.Pin
+      Control.Effect.WebSockets.Schm
+      Data.Schm
+      Data.Schm.Brief
+      Data.Schm.Pin
+      Data.Schm.Prompt
+      Data.Schm.Req
+      Data.Schm.Res
+  hs-source-dirs:
+      src
+  default-extensions:
+      TypeApplications
+      FlexibleContexts
+      ConstraintKinds
+      TemplateHaskell
+      KindSignatures
+      TypeOperators
+      DeriveGeneric
+      TypeFamilies
+      LambdaCase
+      DataKinds
+  build-depends:
+      aeson
+    , base
+    , bytestring
+    , containers
+    , effectful
+    , lens
+    , websockets
+  default-language: Haskell2010

@@ -1,0 +1,25 @@
+spec-version: 0.36.0
+
+default-extensions:
+ - TypeApplications
+ - FlexibleContexts
+ - ConstraintKinds
+ - TemplateHaskell
+ - KindSignatures
+ - TypeOperators
+ - DeriveGeneric
+ - TypeFamilies
+ - LambdaCase
+ - DataKinds
+
+dependencies:
+ - containers
+ - websockets
+ - bytestring
+ - effectful
+ - aeson
+ - lens
+ - base
+
+library:
+ source-dirs: src
