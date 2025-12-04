@@ -126,9 +126,7 @@ runApp :: IOE :> es
 
 runApp h p f m = runError $ runSchm h p m'
         where
-                m' = handoff f >> do
-                        a <- m
-                        closing $> a
+                m' = handoff f >> m <* closing
 
 runSchm :: IOE :> es => Host -> Port -> Eff (Schm : es) a -> Eff es a
 runSchm h p m = unsafeEff lift
