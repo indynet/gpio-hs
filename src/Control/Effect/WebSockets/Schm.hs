@@ -1,4 +1,19 @@
-module Control.Effect.WebSockets.Schm where
+module Control.Effect.WebSockets.Schm
+        ( pinStates
+        , pinState
+        , Fallible
+        , runSchm
+        , runApp
+        , pinsTo
+        , pinsHi
+        , pinsLo
+        , gpios
+        , Host
+        , Port
+        , gpio
+        , wait
+        , Schm
+        ) where
 
 import Control.Concurrent
 import Control.Effect.Pin
@@ -97,11 +112,7 @@ pinState :: Fallible es => Word8 -> Eff es Bool
 pinState pin = putJSON (Schm.Req.PinState pin) >> recvPinState
 
 wait :: Schm :> es => Int -> Eff es ()
-wait i = unsafeEff_ (threadDelay i)
-
----------------------
--- public eDsl API --
----------------------
+wait i = unsafeEff_ $ threadDelay (i * 10)
 
 type Host = String
 type Port = Int
